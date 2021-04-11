@@ -13,7 +13,7 @@ clipmenud &
 dropbox &
 dunst &
 
-#[ ! -s ~/.config/mpd/pid ] && mpd &
+[ ! -s ~/.config/mpd/pid ] && mpd &
 
 
 #dwmblocks

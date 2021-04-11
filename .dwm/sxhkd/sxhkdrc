@@ -5,7 +5,7 @@ super + Return
    alacritty
 
 super + shift + Return
-    nemo
+    alacritty -e ranger
 
 #Rofi & dmenu
 
@@ -18,17 +18,23 @@ super + d
 super + a
   dmconf
 
+super + b
+  bm.sh
+
 super + c
   clipmenu
 
 super + e
     rofi -show emoji -modi emoji
 
+alt + x
+  emacs
+
 alt + p
     rofi -show
 
 alt + c
-    rofi -show calc -modi calc -no-show-match -no-short > /dev/null
+    libreoffice-writer
 
 alt + b
  blueman-manager
@@ -56,8 +62,8 @@ alt + n
 ctrl + alt + s
     xfce4-screenshooter
 
-alt + shift + l
-  notion-app
+alt + Shift + l
+  Notion
 
 ctrl + alt + n
     termite 'ncmpcpp' -e ncmpcpp
@@ -110,7 +116,7 @@ alt + {h,j,k,l}
    mpc {prev,next,play,pause}
 
 alt + m
-  termite 'neomutt' -e neomutt
+  alacritty -e neomutt
 
 #alt + ctrl + p
  # wal -i
