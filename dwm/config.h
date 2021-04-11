@@ -10,13 +10,13 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack Nerd Font:size=10" };
+static const char *fonts[]          = { "Hack Nerd Font:size=9" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#1c1c1c";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#ABB2BF";
-static const char col_gray4[]       = "#1c1c1c";
-static const char col_cyan[]        = "#afd700";
+static const char col_gray1[]       = "#0F111A";
+static const char col_gray2[]       = "#E5E9F0";
+static const char col_gray3[]       = "#E5E9F0";
+static const char col_gray4[]       = "#E5E9F0";
+static const char col_cyan[]        = "#3A575C";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -32,6 +32,7 @@ const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL
 const char *spcmd3[] = {"st", "-n", "sp2", "-g", "120x34", NULL };
 const char *spcmd4[] = {"bitwarden", NULL };
 const char *spcmd5[] = {"st", "-n", "vol", "-g", "144x41", "-e", "pulsemixer", NULL };
+const char *spcmd6[] = {"st", "-n", "mus", "-g", "144x41", "-e", "ncmpcpp", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -39,6 +40,7 @@ static Sp scratchpads[] = {
 	{"sp2",   spcmd3},
 	{"bitwarden",   spcmd4},
 	{"vol",   spcmd5},
+	{"mus",   spcmd6},
 };
 
 /* tagging */
@@ -57,6 +59,7 @@ static const Rule rules[] = {
 	{ NULL,		  "sp2",        	NULL,		SPTAG(2),		1,			 -1 },
 	{ NULL,		  "bitwarden",        	NULL,		SPTAG(3),		1,			 -1 },
 	{ NULL,		  "vol",        	NULL,		SPTAG(4),		1,			 -1 },
+	{ NULL,		  "mus",        	NULL,		SPTAG(5),		1,			 -1 },
 };
 
 /* layout(s) */
@@ -100,7 +103,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "termite", NULL };
+static const char *termcmd[]  = { "alcritty", NULL };
 
 #include "movestack.c"
 
@@ -109,7 +112,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_v,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
@@ -145,11 +148,16 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Right, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Left,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Right, tagmon,         {.i = +1 } },
+	
+	/*Scratchpads*/
 	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
 	{ MODKEY,            			XK_n,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,      		XK_n,	   togglescratch,  {.ui = 3 } },
 	{ MODKEY,            			XK_o,	   togglescratch,  {.ui = 4 } },
+	{ MODKEY,            			XK_i,	   togglescratch,  {.ui = 5 } },
+
+	/*tagkeys*/
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -159,6 +167,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+
 	{ MODKEY|ShiftMask,             XK_x,      quit,           {0} },
 };
 

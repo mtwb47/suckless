@@ -63,13 +63,38 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-     /*   { run_command,    "   %2s ",     "mpd.sh" }, */
-        { uptime,          "^c#af87d7^  %s ",         NULL           }, 
-	{ cpu_perc,	   "^c#ffaf00^  %s%% ",         NULL           },
-	{ ram_perc,        "^c#ff5faf^ ﲯ %s%% ",        NULL           },
-	{ disk_perc,       "^c#00afaf^  %s%% ",         "/"            },
-	{ run_command,     "^c#5fafd7^  摒  %2s ",     "tail -1 ~/.weather" }, 
-	{ run_command,     "^c#af005f^  ﮮ %2s ",     "tail -1 ~/.updates" },
-	{ run_command,     "^c#d0d0d0^  %2s ",     "volume.sh" }, 
-        { datetime,        "^c#5faf5f^  %s",         "%a %b %d - %I:%M%p" },
+     
+
+	{ run_command,     "^c#BBC0D0^ %s ",        "mpdicon.sh" },
+	{ run_command,     "^c#ffffff^ %s ",        "mpd.sh" }, 
+
+	{ run_command,     "^c#A48EAD^ %s ",        "mailicon.sh" },
+	{ run_command,     "^c#ffffff^ %s |",        "newmail.sh" },
+
+	{ run_command,     "^c#BF616A^ %2s ",        "upicon.sh" },
+	{ uptime,          "^c#ffffff^ %s |",         NULL           }, 
+	
+	{ run_command,     "^c#A3BE8C^ %2s ",        "cpuicon.sh" },
+	{ cpu_perc,	   "^c#ffffff^ %s%% |",         NULL           },
+	
+	{ run_command,     "^c#EBCB8B^ %2s ",        "ramicon.sh" },
+	{ ram_perc,        "^c#ffffff^ %s%% | ",        NULL           },
+	
+	{ run_command,     "^c#81A1C1^ %2s ",        "diskicon.sh" },
+	{ disk_perc,       "^c#ffffff^  %s%% |",         "/"            },
+	
+	{ run_command,     "^c#BF616A^ %2s ",        "tempicon.sh" },
+	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.temp" }, 
+
+	{ run_command,     "^c#A48EAD^ %2s ",        "weathericon.sh" },
+	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.weather" }, 
+	
+	{ run_command,     "^c#88C0D0^ %2s ",        "pacmanicon.sh" },
+	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.updates" },
+	
+	{ run_command,     "^c#A3BE8C^ %s ",        "volumeicon.sh" },
+	{ run_command,     "^c#ffffff^ %s |",     "volume.sh" }, 
+        
+	{ run_command,     "^c#BF616A^ %2s ",        "timeicon.sh" },
+	{ datetime,        "^c#ffffff^ %s ",         "%a %b %d - %I:%M%p" },
 };
