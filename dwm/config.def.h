@@ -54,6 +54,7 @@ static const Rule rules[] = {
 	{ "Gimp",	  NULL,			NULL,		0,			1,			 -1 },
 	{ "Firefox",      NULL,			NULL,		1 << 8,			0,			 -1 },
 	{ "Audacity",	  NULL,			NULL,		0,			1,			 -1 },
+	{ "cs",	          NULL,			NULL,		0,			1,			 -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
 	{ NULL,		  "sp2",        	NULL,		SPTAG(2),		1,			 -1 },
