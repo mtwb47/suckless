@@ -28,19 +28,21 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "nnn", NULL };
+const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
 const char *spcmd3[] = {"st", "-n", "sp2", "-g", "120x34", NULL };
 const char *spcmd4[] = {"bitwarden", NULL };
 const char *spcmd5[] = {"st", "-n", "vol", "-g", "144x41", "-e", "pulsemixer", NULL };
 const char *spcmd6[] = {"st", "-n", "mus", "-g", "144x41", "-e", "ncmpcpp", NULL };
+const char *spcmd7[] = {"st", "-n", "mail", "-g", "144x41", "-e", "neomutt", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spranger",    spcmd2},
-	{"sp2",   spcmd3},
+	{"sp2",         spcmd3},
 	{"bitwarden",   spcmd4},
-	{"vol",   spcmd5},
-	{"mus",   spcmd6},
+	{"vol",         spcmd5},
+	{"mus",         spcmd6},
+	{"mail",        spcmd7},
 };
 
 /* tagging */
@@ -61,6 +63,7 @@ static const Rule rules[] = {
 	{ NULL,		  "bitwarden",        	NULL,		SPTAG(3),		1,			 -1 },
 	{ NULL,		  "vol",        	NULL,		SPTAG(4),		1,			 -1 },
 	{ NULL,		  "mus",        	NULL,		SPTAG(5),		1,			 -1 },
+	{ NULL,		  "mail",        	NULL,		SPTAG(6),		1,			 -1 },
 };
 
 /* layout(s) */
@@ -124,7 +127,7 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_F1,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_F3,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_F4,      setlayout,      {.v = &layouts[5]} },
@@ -157,6 +160,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,      		XK_n,	   togglescratch,  {.ui = 3 } },
 	{ MODKEY,            			XK_o,	   togglescratch,  {.ui = 4 } },
 	{ MODKEY,            			XK_i,	   togglescratch,  {.ui = 5 } },
+	{ MODKEY,            			XK_m,	   togglescratch,  {.ui = 6 } },
 
 	/*tagkeys*/
 	TAGKEYS(                        XK_1,                      0)
