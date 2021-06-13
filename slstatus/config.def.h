@@ -84,13 +84,13 @@ static const struct arg args[] = {
 	{ disk_perc,       "^c#ffffff^  %s%% |",         "/"            },
 	
 	{ run_command,     "^c#BF616A^ %2s ",        "tempicon.sh" },
-	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.temp" }, 
+	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.config/.temp" }, 
 
 	{ run_command,     "^c#A48EAD^ %2s ",        "weathericon.sh" },
-	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.weather" }, 
+	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.config/.weather" }, 
 	
 	{ run_command,     "^c#88C0D0^ %2s ",        "pacmanicon.sh" },
-	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.updates" },
+	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.config/.updates" },
 	
 	{ run_command,     "^c#A3BE8C^ %s ",        "volumeicon.sh" },
 	{ run_command,     "^c#ffffff^ %s |",     "volume.sh" }, 
