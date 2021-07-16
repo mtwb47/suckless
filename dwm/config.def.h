@@ -10,13 +10,13 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack Nerd Font:size=9" };
+static const char *fonts[]          = { "Hack Nerd Font:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#0F111A";
+static const char col_gray1[]       = "#201c1e";
 static const char col_gray2[]       = "#E5E9F0";
 static const char col_gray3[]       = "#E5E9F0";
 static const char col_gray4[]       = "#E5E9F0";
-static const char col_cyan[]        = "#3A575C";
+static const char col_cyan[]        = "#9565f1";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -54,7 +54,6 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",	  NULL,			NULL,		0,			1,			 -1 },
-	{ "Firefox",      NULL,			NULL,		1 << 8,			0,			 -1 },
 	{ "Audacity",	  NULL,			NULL,		0,			1,			 -1 },
 	{ "cs",	          NULL,			NULL,		0,			1,			 -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
