@@ -34,6 +34,7 @@ const char *spcmd4[] = {"bitwarden", NULL };
 const char *spcmd5[] = {"st", "-n", "vol", "-g", "144x41", "-e", "pulsemixer", NULL };
 const char *spcmd6[] = {"st", "-n", "mus", "-g", "144x41", "-e", "ncmpcpp", NULL };
 const char *spcmd7[] = {"st", "-n", "mail", "-g", "144x41", "-e", "neomutt", NULL };
+const char *spcmd8[] = {"gitkraken", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -43,6 +44,7 @@ static Sp scratchpads[] = {
 	{"vol",         spcmd5},
 	{"mus",         spcmd6},
 	{"mail",        spcmd7},
+	{"gitkraken",   spcmd8},
 };
 
 /* tagging */
@@ -63,6 +65,7 @@ static const Rule rules[] = {
 	{ NULL,		  "vol",        	NULL,		SPTAG(4),		1,			 -1 },
 	{ NULL,		  "mus",        	NULL,		SPTAG(5),		1,			 -1 },
 	{ NULL,		  "mail",        	NULL,		SPTAG(6),		1,			 -1 },
+	{ NULL,		  "gitkraken",        	NULL,		SPTAG(7),		1,			 -1 },
 };
 
 /* layout(s) */
@@ -160,6 +163,7 @@ static Key keys[] = {
 	{ MODKEY,            			XK_o,	   togglescratch,  {.ui = 4 } },
 	{ MODKEY,            			XK_i,	   togglescratch,  {.ui = 5 } },
 	{ MODKEY,            			XK_m,	   togglescratch,  {.ui = 6 } },
+	{ MODKEY|ShiftMask,    			XK_o,	   togglescratch,  {.ui = 7 } },
 
 	/*tagkeys*/
 	TAGKEYS(                        XK_1,                      0)
