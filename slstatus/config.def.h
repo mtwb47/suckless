@@ -66,7 +66,7 @@ static const struct arg args[] = {
      
 
 	{ run_command,     "^c#9565F1^ %s ",        "mpdicon.sh" },
-	{ run_command,     "^c#ffffff^ %s ",        "mpd.sh" }, 
+	{ run_command,     "^c#ffffff^ %s |",        "mpd.sh" }, 
 
 	{ run_command,     "^c#ffffff^ %s ",        "mailicon.sh" },
 	{ run_command,     "^c#ffffff^ %s |",        "newmail.sh" },
@@ -78,7 +78,7 @@ static const struct arg args[] = {
 	{ cpu_perc,	   "^c#ffffff^ %s%% |",         NULL           },
 	
 	{ run_command,     "^c#9565F1^ %2s ",        "ramicon.sh" },
-	{ ram_perc,        "^c#ffffff^ %s%% | ",        NULL           },
+	{ ram_perc,        "^c#ffffff^ %s%% |",        NULL           },
 	
 	{ run_command,     "^c#ffffff^ %2s ",        "diskicon.sh" },
 	{ disk_perc,       "^c#ffffff^  %s%% |",         "/"            },
@@ -92,9 +92,10 @@ static const struct arg args[] = {
 	{ run_command,     "^c#9565F1^ %s ",        "pacmanicon.sh" },
 	{ run_command,     "^c#ffffff^ %2s |",     "tail -1 ~/.config/updates" },
 	
+
 	{ run_command,     "^c#ffffff^ %s ",        "volumeicon.sh" },
 	{ run_command,     "^c#ffffff^ %s |",     "volume.sh" }, 
         
 	{ run_command,     "^c#9565F1^ %2s ",        "timeicon.sh" },
-	{ datetime,        "^c#ffffff^ %s ",         "%a %b %d - %I:%M%p" },
+	{ datetime,        "^c#ffffff^ %s",         "%a %b %d - %I:%M%p" },
 };

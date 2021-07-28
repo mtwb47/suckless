@@ -115,21 +115,21 @@ static const char *termcmd[]  = { "alcritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_i,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_v,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_n,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_o,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 
 
 	/*layout bindings */
 
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_t,       setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_F1,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_m,       setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_F3,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_F4,      setlayout,      {.v = &layouts[5]} },
@@ -139,31 +139,31 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F8,      setlayout,      {.v = &layouts[9]} },
 	{ MODKEY,                       XK_F9,      setlayout,      {.v = &layouts[10]} },
 	{ MODKEY,                       XK_F10,     setlayout,      {.v = &layouts[11]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[12]} },
-	{ MODKEY|ControlMask,		XK_comma,  cyclelayout,    {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+	{ MODKEY,                       XK_f,       setlayout,      {.v = &layouts[12]} },
+	{ MODKEY|ControlMask,		    XK_comma,   cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period,  cyclelayout,    {.i = +1 } },
+	{ MODKEY,                       XK_space,   setlayout,      {0} },
 
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,		XK_j,      movestack,      {.i = +1} },
-	{ MODKEY|ShiftMask,		XK_k,      movestack,      {.i = -1} },
+	{ MODKEY|ShiftMask,		        XK_e,      movestack,      {.i = +1} },
+	{ MODKEY|ShiftMask,		        XK_i,      movestack,      {.i = -1} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_Left,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_Right, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_Left,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_Right, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_Left,   focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_Right,  focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Left,   tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Right,  tagmon,         {.i = +1 } },
 	
 	/*Scratchpads*/
 	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
-	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
-	{ MODKEY,            			XK_n,	   togglescratch,  {.ui = 2 } },
-	{ MODKEY|ShiftMask,      		XK_n,	   togglescratch,  {.ui = 3 } },
-	{ MODKEY,            			XK_o,	   togglescratch,  {.ui = 4 } },
-	{ MODKEY,            			XK_i,	   togglescratch,  {.ui = 5 } },
-	{ MODKEY,            			XK_m,	   togglescratch,  {.ui = 6 } },
-	{ MODKEY|ShiftMask,    			XK_o,	   togglescratch,  {.ui = 7 } },
+	{ MODKEY|ShiftMask,   			XK_y,	   togglescratch,  {.ui = 1 } },
+	{ MODKEY,            			XK_j,	   togglescratch,  {.ui = 2 } },
+	{ MODKEY|ShiftMask,      		XK_j,	   togglescratch,  {.ui = 3 } },
+	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 4 } },
+	{ MODKEY|ShiftMask,    			XK_u,	   togglescratch,  {.ui = 5 } },
+	{ MODKEY,            			XK_l,	   togglescratch,  {.ui = 6 } },
+	{ MODKEY|ShiftMask,    			XK_l,	   togglescratch,  {.ui = 7 } },
 
 	/*tagkeys*/
 	TAGKEYS(                        XK_1,                      0)
