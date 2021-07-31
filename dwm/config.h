@@ -55,17 +55,17 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",	  NULL,			NULL,		0,			1,			 -1 },
-	{ "Audacity",	  NULL,			NULL,		0,			1,			 -1 },
-	{ "cs",	          NULL,			NULL,		0,			1,			 -1 },
+	{ "Gimp",	  NULL,			NULL,		0,		    	1,			 -1 },
+	{ "Audacity", NULL,			NULL,		0,			    1,			 -1 },
+	{ "cs",	      NULL,			NULL,		0,			    1,			 -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
-	{ NULL,		  "sp2",        	NULL,		SPTAG(2),		1,			 -1 },
-	{ NULL,		  "bitwarden",        	NULL,		SPTAG(3),		1,			 -1 },
-	{ NULL,		  "vol",        	NULL,		SPTAG(4),		1,			 -1 },
-	{ NULL,		  "mus",        	NULL,		SPTAG(5),		1,			 -1 },
-	{ NULL,		  "mail",        	NULL,		SPTAG(6),		1,			 -1 },
-	{ NULL,		  "gitkraken",        	NULL,		SPTAG(7),		1,			 -1 },
+	{ NULL,		  "sp2",       	NULL,		SPTAG(2),		1,			 -1 },
+	{ NULL,		  "bitwarden", 	NULL,		SPTAG(3),		1,			 -1 },
+	{ NULL,		  "vol",       	NULL,		SPTAG(4),		1,			 -1 },
+	{ NULL,		  "mus",       	NULL,		SPTAG(5),		1,			 -1 },
+	{ NULL,		  "mail",      	NULL,		SPTAG(6),		1,			 -1 },
+	{ NULL,		  "gitkraken",  NULL,		SPTAG(7),		1,			 -1 },
 };
 
 /* layout(s) */
@@ -116,11 +116,11 @@ static const char *termcmd[]  = { "alcritty", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_i,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_v,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_n,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_o,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 
@@ -129,7 +129,7 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_t,       setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_F1,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_m,       setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,       setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_F3,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_F4,      setlayout,      {.v = &layouts[5]} },
@@ -145,8 +145,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,   setlayout,      {0} },
 
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,		        XK_e,      movestack,      {.i = +1} },
-	{ MODKEY|ShiftMask,		        XK_i,      movestack,      {.i = -1} },
+	{ MODKEY|ShiftMask,		        XK_j,      movestack,      {.i = +1} },
+	{ MODKEY|ShiftMask,		        XK_k,      movestack,      {.i = -1} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -156,14 +156,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Right,  tagmon,         {.i = +1 } },
 	
 	/*Scratchpads*/
-	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
-	{ MODKEY|ShiftMask,   			XK_y,	   togglescratch,  {.ui = 1 } },
-	{ MODKEY,            			XK_j,	   togglescratch,  {.ui = 2 } },
-	{ MODKEY|ShiftMask,      		XK_j,	   togglescratch,  {.ui = 3 } },
-	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 4 } },
-	{ MODKEY|ShiftMask,    			XK_u,	   togglescratch,  {.ui = 5 } },
-	{ MODKEY,            			XK_l,	   togglescratch,  {.ui = 6 } },
-	{ MODKEY|ShiftMask,    			XK_l,	   togglescratch,  {.ui = 7 } },
+	{ MODKEY,            			XK_b,  	   togglescratch,  {.ui = 0 } }, /* Terminal */
+	{ MODKEY|ShiftMask,   			XK_b,	   togglescratch,  {.ui = 1 } }, /* Ranger */
+	{ MODKEY,            			XK_v,	   togglescratch,  {.ui = 2 } }, /* Terminal */
+	{ MODKEY|ShiftMask,      		XK_v,	   togglescratch,  {.ui = 3 } }, /* biwarden */
+	{ MODKEY,            			XK_n,	   togglescratch,  {.ui = 4 } }, /* pulsemixer */
+	{ MODKEY|ShiftMask,    			XK_n,	   togglescratch,  {.ui = 5 } }, /* music */
+	{ MODKEY,            			XK_m,	   togglescratch,  {.ui = 6 } }, /* neomutt */
+	{ MODKEY|ShiftMask,    			XK_m,	   togglescratch,  {.ui = 7 } }, /* gitkraken */
 
 	/*tagkeys*/
 	TAGKEYS(                        XK_1,                      0)
