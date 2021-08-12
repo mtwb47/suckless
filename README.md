@@ -2,6 +2,9 @@
 
 This dwm install is based on the Material Ocean theme. 
 
+NOTE!!!! ---> If you'd like Matt's Purple or Gruvbox rice, you can get them by changing to the branches made for those rices. (Named purple and gruv)
+
+
 ## Dependencies
 * git (to download this repo)
 * make (base devel in Arch)
