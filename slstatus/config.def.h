@@ -63,7 +63,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-     
+
+    { run_command,     "^c#cc241d^ %s ",        "yticon.sh" },
+	{ run_command,     "^c#ebdbb2^ %2s |",     "tail -1 ~/.config/subs" },
 
 	{ run_command,     "^c#d79921^  %s ",        "mpdicon.sh" },
 	{ run_command,     "^c#ebdbb2^  %s |",        "mpd.sh" }, 
