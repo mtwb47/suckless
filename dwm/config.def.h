@@ -15,7 +15,7 @@ static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#ebdbb2";
 static const char col_gray3[]       = "#ebdbb2";
-static const char col_gray4[]       = "#ffffff";
+static const char col_gray4[]       = "#282828";
 static const char col_gray5[]       = "#8ec07c";
 static const char col_cyan[]        = "#d65d0e";
 static const char *colors[][3]      = {
@@ -124,7 +124,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-
+    { MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 
 	/*layout bindings */
 
